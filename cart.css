@@ -1,0 +1,86 @@
+/* Global CSS */
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Background color when Lottie is displayed */
+.lottie-background {
+    background-color: black;
+}
+
+/* Lottie animation div */
+.lottie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full screen */
+    background-color: black;
+    transition: opacity 1s ease-in-out;
+    z-index: 9999; /* Ensure it's on top */
+}
+
+/* Reduce the Lottie animation size */
+lottie-player {
+    width: 300px; /* Adjust width */
+    height: 300px; /* Adjust height */
+}
+
+/* Hide content initially */
+#content {
+    display: none; /* Hidden initially */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Products table styling */
+
+
+/* Fade-in animation for the table */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* Slide-in animation for header */
+@keyframes slideIn {
+    0% { transform: translateY(-30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Button styles */
+
+
+
+
+@keyframes fadeInRow {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+
+/* Style for the "Start" button inside Lottie */
+#start-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #07529c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Remove overflow on body when content is shown */
+.show-content {
+    overflow: auto;
+}

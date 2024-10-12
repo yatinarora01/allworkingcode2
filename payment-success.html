@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .success-message {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-message h1 {
+            font-size: 36px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .success-message p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .tick {
+            font-size: 100px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-message">
+        <div class="tick">&#10004;</div> <!-- Big tick -->
+        <h1>Payment Successful!</h1>
+        <div id="payment-message"></div>
+    </div>
+
+    <script>
+        // Parse query parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const totalAmount = urlParams.get('totalAmount');
+
+        // Display payment success message
+        const paymentMessage = document.getElementById('payment-message');
+        paymentMessage.innerHTML = `
+            <p>Thank you, ${name}, for your payment of ₹${totalAmount}.</p>
+        `;
+    </script>
+</body>
+
+</html>
